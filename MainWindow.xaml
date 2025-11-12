@@ -211,6 +211,40 @@
                         Click="NotUserControlResource_Click"
                         Content="Efficient" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10"
+                        VerticalAlignment="Center"
+                        FontFamily="Segoe UI"
+                        FontSize="30"
+                        Text="ResourceDictionary Scope:" />
+                    <Button
+                        x:Name="ResourceScope"
+                        Width="150"
+                        Height="60"
+                        Click="ResourceScope_Click"
+                        Content="ResourceScope" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10"
+                        VerticalAlignment="Center"
+                        FontFamily="Segoe UI"
+                        FontSize="30"
+                        Text="Duplicate Resource:" />
+                    <Button
+                        x:Name="InefficientDuplicateResource"
+                        Width="150"
+                        Height="60"
+                        Click="InefficientDuplicateResource_Click"
+                        Content="Inefficient" />
+                    <Button
+                        x:Name="EfficientDuplicateResource"
+                        Width="150"
+                        Height="60"
+                        Click="EfficientDuplicateResource_Click"
+                        Content="Efficient" />
+                </StackPanel>
             </StackPanel>
             <Frame x:Name="MainFrame" Grid.Row="2" />
         </Grid>

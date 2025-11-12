@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Diagnostics;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -27,6 +28,7 @@ namespace Test3
     public partial class App : Application
     {
         private Window? _window;
+        private static readonly string PerfLogPath = System.IO.Path.Combine("ResourceScope", "perf_log.txt");
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -34,7 +36,18 @@ namespace Test3
         /// </summary>
         public App()
         {
+            
+            var sw = Stopwatch.StartNew();
             InitializeComponent();
+            sw.Stop();
+            var msg = $"[{DateTime.Now:O}] InitializeComponent() took {sw.Elapsed.TotalMilliseconds} ms";
+            Debug.WriteLine(msg);
+            try
+            {
+                System.IO.Directory.CreateDirectory("ResourceScope");
+                System.IO.File.AppendAllText(PerfLogPath, msg + Environment.NewLine);
+            }
+            catch { /* best-effort logging */ }
         }
 
         /// <summary>
@@ -43,8 +56,17 @@ namespace Test3
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
+            var sw = Stopwatch.StartNew();
             _window = new MainWindow();
             _window.Activate();
+            sw.Stop();
+            var msg = $"[{DateTime.Now:O}] App OnLaunched total (create+activate MainWindow) took {sw.Elapsed.TotalMilliseconds} ms";
+            Debug.WriteLine(msg);
+            try
+            {
+                System.IO.File.AppendAllText(PerfLogPath, msg + Environment.NewLine);
+            }
+            catch { /* best-effort logging */ }
         }
     }
 }

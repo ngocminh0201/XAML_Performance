@@ -65,7 +65,7 @@
                                 Width="120"
                                 Height="120"
                                 Margin="8"
-                                Source="{Binding ImagePath}" />
+                                Source="{Binding ImagePath, Converter={StaticResource ImageLoader}, ConverterParameter=120}" />
 
                             <StackPanel
                                 Grid.Row="0"
@@ -80,14 +80,12 @@
                                     <TextBlock FontWeight="SemiBold" Text="Price: " />
                                     <TextBlock Foreground="Green" Text="{x:Bind Price, Mode=OneWay}" />
                                 </StackPanel>
-                                <!--  MÔ TẢ: vẫn như Heavy nhưng giới hạn chiều rộng để layout nhanh hơn  -->
                                 <TextBlock
                                     Width="360"
                                     Text="{x:Bind Description}"
                                     TextWrapping="Wrap" />
                             </StackPanel>
 
-                            <!--  Footer giữ nguyên giao diện nhưng nhẹ (không hiệu ứng nặng)  -->
                             <Border
                                 Grid.Row="2"
                                 Grid.ColumnSpan="2"

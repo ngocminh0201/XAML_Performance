@@ -27,9 +27,22 @@
     <None Remove="XAMLMarkup\ReduceVisualTree\WidthPage.xaml" />
     <None Remove="XAMLMarkup\ReduceVisualTree\xLoadPage.xaml" />
     <None Remove="XAMLMarkup\ResourceAndResourceDictionary\Definition.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\DuplicateResource\EfficientPage.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\DuplicateResource\InefficientPage.xaml" />
     <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceNotInUserControl\ListViewItemThemeResource.xaml" />
     <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceNotInUserControl\ResourceNotInUserControl.xaml" />
     <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceNotInUserControl\ResourceNotInUserControlPage.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary1.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary10.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary2.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary3.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary4.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary5.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary6.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary7.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary8.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary9.xaml" />
+    <None Remove="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceScopePage.xaml" />
     <None Remove="XAMLMarkup\ResourceAndResourceDictionary\xKeyPage.xaml" />
     <None Remove="XAMLMarkup\ResourceAndResourceDictionary\xNamePage.xaml" />
   </ItemGroup>
@@ -110,6 +123,57 @@
 
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\DuplicateResource\EfficientPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\DuplicateResource\InefficientPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceScopePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary10.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary9.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary8.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary7.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary6.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary5.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="XAMLMarkup\ResourceAndResourceDictionary\ResourceScope\ResourceDictionaries\ResourceDictionary1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>

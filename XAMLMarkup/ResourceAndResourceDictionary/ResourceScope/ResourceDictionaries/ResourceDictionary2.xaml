@@ -1,0 +1,544 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls">
+
+    <!--  WinUI 3 — ULTRA HEAVY ResourceDictionary  -->
+    <!--  Goals: large number of resources, long Geometry data, many templates & VisualStates.  -->
+    <!--  No WPF Triggers. Only VisualStateManager, Storyboards, and WinUI-safe constructs.  -->
+
+    <!--  ==== THEME DICTS (double resource tables) ====  -->
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="Brush.App.Background" Color="#FFFFFFFF" />
+            <SolidColorBrush x:Key="Brush.App.Foreground" Color="#FF111827" />
+            <SolidColorBrush x:Key="Brush.App.Subtle" Color="#FFF3F4F6" />
+            <SolidColorBrush x:Key="Brush.App.Border" Color="#FFE5E7EB" />
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="Brush.App.Background" Color="#FF0B0B0C" />
+            <SolidColorBrush x:Key="Brush.App.Foreground" Color="#FFF9FAFB" />
+            <SolidColorBrush x:Key="Brush.App.Subtle" Color="#FF1F2937" />
+            <SolidColorBrush x:Key="Brush.App.Border" Color="#FF334155" />
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+    <!--  ==== MASS BRUSH TABLE (keyed) ====  -->
+    <!--  40+ solid brushes to bloat parsing and resource table lookups  -->
+    <SolidColorBrush
+        x:Key="Brush.Primary"
+        x:Name="ForceCreate_Primary"
+        Color="#FF3B82F6" />
+    <SolidColorBrush x:Key="Brush.PrimaryDark" Color="#FF1E40AF" />
+    <SolidColorBrush x:Key="Brush.Secondary" Color="#FF10B981" />
+    <SolidColorBrush x:Key="Brush.Tertiary" Color="#FFF59E0B" />
+    <SolidColorBrush x:Key="Brush.Danger" Color="#FFEF4444" />
+    <SolidColorBrush x:Key="Brush.Warning" Color="#FFF59E0B" />
+    <SolidColorBrush x:Key="Brush.Info" Color="#FF0EA5E9" />
+    <SolidColorBrush x:Key="Brush.Neutral0" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Brush.Neutral50" Color="#FFFAFAFA" />
+    <SolidColorBrush x:Key="Brush.Neutral100" Color="#FFF5F5F5" />
+    <SolidColorBrush x:Key="Brush.Neutral200" Color="#FFE5E7EB" />
+    <SolidColorBrush x:Key="Brush.Neutral300" Color="#FFD1D5DB" />
+    <SolidColorBrush x:Key="Brush.Neutral400" Color="#FF9CA3AF" />
+    <SolidColorBrush x:Key="Brush.Neutral500" Color="#FF6B7280" />
+    <SolidColorBrush x:Key="Brush.Neutral600" Color="#FF4B5563" />
+    <SolidColorBrush x:Key="Brush.Neutral700" Color="#FF374151" />
+    <SolidColorBrush x:Key="Brush.Neutral800" Color="#FF1F2937" />
+    <SolidColorBrush x:Key="Brush.Neutral900" Color="#FF111827" />
+
+    <!--  Gradients  -->
+    <LinearGradientBrush x:Key="Grad.PrimaryChrome" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Offset="0" Color="#FF0EA5E9" />
+        <GradientStop Offset="0.2" Color="#FF3B82F6" />
+        <GradientStop Offset="0.4" Color="#FF6366F1" />
+        <GradientStop Offset="0.6" Color="#FF8B5CF6" />
+        <GradientStop Offset="0.8" Color="#FFEC4899" />
+        <GradientStop Offset="1" Color="#FFF59E0B" />
+    </LinearGradientBrush>
+    <RadialGradientBrush x:Key="Grad.Shade" Center="0.5,0.5" RadiusX="1" RadiusY="1">
+        <GradientStop Offset="0" Color="#11000000" />
+        <GradientStop Offset="0.5" Color="#33000000" />
+        <GradientStop Offset="1" Color="#55000000" />
+    </RadialGradientBrush>
+
+    <!--  ==== LONG GEOMETRIES (very long path data to stress XAML parser) ====  -->
+    <!--  Copy variations to increase parse time. These are intentionally verbose.  -->
+    <Geometry x:Key="Geo.L1">M 0,0 C 30,5 60,-5 90,0 S 150,20 180,10 Q 220,-10 260,20 T 320,40 380,30 440,60 500,50 560,80 620,70 680,100 740,90 800,120 860,110 920,140 980,130 1040,160 1100,150 1160,180 1220,170 1280,200</Geometry>
+    <Geometry x:Key="Geo.L2">M 0,0 L 100,0 100,100 0,100 Z M 12,12 L 88,12 88,88 12,88 Z M 24,24 L 76,24 76,76 24,76 Z</Geometry>
+    <Geometry x:Key="Geo.L3">M 10,10 C 20,0 40,0 50,10 S 80,30 90,20 Q 120,0 150,30 T 210,60 260,40 310,80 360,70 410,100 460,90 510,120 560,110 610,140 660,130 710,160 760,150 810,180</Geometry>
+    <!--  duplicate many complex mini-icons  -->
+    <Geometry x:Key="Geo.IconA">M12,2 C6.48,2 2,6.48 2,12 s4.48,10 10,10 10,-4.48 10,-10 S17.52,2 12,2 z M13,7 h-2 v6 h6 v-2 h-4 z</Geometry>
+    <Geometry x:Key="Geo.IconB">M3 12l2-2 4 4L19 4l2 2-12 12z</Geometry>
+    <Geometry x:Key="Geo.IconC">M4 4h16v16H4z M8 8h8v8H8z</Geometry>
+
+    <!--  ==== SIZE + THICKNESS TABLE (lots of entries) ====  -->
+    <x:Double x:Key="Size.2">2</x:Double>
+    <x:Double x:Key="Size.4">4</x:Double>
+    <x:Double x:Key="Size.6">6</x:Double>
+    <x:Double x:Key="Size.8">8</x:Double>
+    <x:Double x:Key="Size.10">10</x:Double>
+    <x:Double x:Key="Size.12">12</x:Double>
+    <x:Double x:Key="Size.14">14</x:Double>
+    <x:Double x:Key="Size.16">16</x:Double>
+    <x:Double x:Key="Size.18">18</x:Double>
+    <x:Double x:Key="Size.20">20</x:Double>
+    <Thickness x:Key="Pad.2">2</Thickness>
+    <Thickness x:Key="Pad.4">4</Thickness>
+    <Thickness x:Key="Pad.6">6</Thickness>
+    <Thickness x:Key="Pad.8">8</Thickness>
+    <Thickness x:Key="Pad.12">12</Thickness>
+    <Thickness x:Key="Pad.16">16</Thickness>
+    <Thickness x:Key="Pad.20">20</Thickness>
+
+    <!--  ==== IMPLICIT TextBlock ====  -->
+    <Style TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Foreground" Value="{ThemeResource Brush.App.Foreground}" />
+        <Setter Property="Margin" Value="0,2,0,2" />
+    </Style>
+
+    <!--  ==== HEAVY BUTTON TEMPLATE ====  -->
+    <Style x:Key="UltraButton" TargetType="Button">
+        <Setter Property="UseSystemFocusVisuals" Value="True" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Background" Value="{StaticResource Brush.Primary}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Padding" Value="18,12" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid x:Name="Root" Background="{TemplateBinding Background}">
+                        <Border
+                            x:Name="Outer"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{StaticResource Brush.PrimaryDark}"
+                            BorderThickness="1"
+                            CornerRadius="10" />
+                        <Grid>
+                            <Rectangle x:Name="Overlay" Opacity="0">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Offset="0" Color="#22FFFFFF" />
+                                        <GradientStop Offset="1" Color="#11000000" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Path
+                                Width="18"
+                                Height="18"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Data="{StaticResource Geo.L2}"
+                                Fill="#20FFFFFF"
+                                Stretch="Uniform" />
+                            <ContentPresenter
+                                x:Name="ContentPresenter"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                                <ContentPresenter.RenderTransform>
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </ContentPresenter.RenderTransform>
+                            </ContentPresenter>
+                        </Grid>
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Overlay"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.3"
+                                            Duration="0:0:0.12" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Overlay"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.45"
+                                            Duration="0:0:0.08" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="ContentPresenter"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                            To="0.98"
+                                            Duration="0:0:0.06" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="ContentPresenter"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                            To="0.98"
+                                            Duration="0:0:0.06" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Outer" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame Value="#FF9CA3AF" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Outer" Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame Value="#FFFFFFFF" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Derived styles  -->
+    <Style
+        x:Key="UltraButton.Secondary"
+        BasedOn="{StaticResource UltraButton}"
+        TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource Brush.Secondary}" />
+    </Style>
+    <Style
+        x:Key="UltraButton.Danger"
+        BasedOn="{StaticResource UltraButton}"
+        TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource Brush.Danger}" />
+    </Style>
+
+    <!--  ==== HEAVY LISTVIEWITEM ====  -->
+    <Style x:Key="UltraListViewItem" TargetType="ListViewItem">
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <Grid x:Name="Root">
+                        <Border x:Name="Plate" Background="Transparent" />
+                        <Border
+                            x:Name="Sel"
+                            Background="#223B82F6"
+                            Opacity="0" />
+                        <Grid x:Name="ContentRoot" Margin="8,4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Path
+                                Width="16"
+                                Height="16"
+                                Data="{StaticResource Geo.IconA}"
+                                Fill="{StaticResource Brush.Info}" />
+                            <Rectangle Grid.Column="1" Width="10" />
+                            <StackPanel Grid.Column="2" Spacing="2">
+                                <TextBlock
+                                    FontSize="16"
+                                    FontWeight="SemiBold"
+                                    Text="{Binding Title}" />
+                                <TextBlock Opacity="0.8" Text="{Binding Subtitle}" />
+                                <ProgressBar Height="3" IsIndeterminate="True" />
+                            </StackPanel>
+                            <Path
+                                Grid.Column="3"
+                                Width="24"
+                                Height="24"
+                                Data="{StaticResource Geo.L3}"
+                                Stretch="Uniform"
+                                Stroke="#33000000"
+                                StrokeThickness="1" />
+                        </Grid>
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Plate" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame Value="{StaticResource Grad.PrimaryChrome}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="ContentRoot"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.85"
+                                            Duration="0:0:0.06" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected" />
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Sel"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  ==== HEAVY TEXTBOX ====  -->
+    <Style x:Key="UltraTextBox" TargetType="TextBox">
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="BorderBrush" Value="{StaticResource Brush.Neutral400}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Border
+                            x:Name="Border"
+                            Background="{ThemeResource Brush.App.Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="6" />
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                x:Name="Placeholder"
+                                Margin="10,6,10,0"
+                                Foreground="{StaticResource Brush.Neutral400}"
+                                Text="Enter text" />
+                            <ScrollViewer
+                                x:Name="ContentElement"
+                                Grid.Row="1"
+                                Margin="8,4" />
+                        </Grid>
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame Value="{StaticResource Brush.Primary}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame Value="{StaticResource Brush.Neutral500}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Placeholder"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused">
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Placeholder"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  ==== HEAVY PROGRESSBAR ====  -->
+    <Style x:Key="UltraProgressBar" TargetType="ProgressBar">
+        <Setter Property="Height" Value="6" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid MinWidth="120">
+                        <Border
+                            x:Name="Track"
+                            Background="#11000000"
+                            CornerRadius="3" />
+                        <Border
+                            x:Name="Indicator"
+                            Width="0"
+                            HorizontalAlignment="Left"
+                            Background="{StaticResource Grad.PrimaryChrome}"
+                            CornerRadius="3" />
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="DeterminateStates">
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Indicator"
+                                            Storyboard.TargetProperty="Width"
+                                            To="80"
+                                            Duration="0:0:0.25" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Margin">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Thickness>0,0,0,0</Thickness>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Thickness>120,0,0,0</Thickness>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  ==== HEAVY COMBOBOX ====  -->
+    <Style x:Key="UltraComboBox" TargetType="ComboBox">
+        <Setter Property="Padding" Value="10,6" />
+        <Setter Property="BorderBrush" Value="{StaticResource Brush.Neutral400}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Border
+                            x:Name="RootBorder"
+                            Background="{ThemeResource Brush.App.Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="6" />
+                        <ContentPresenter Grid.Column="0" Margin="8,4" />
+                        <Path
+                            Grid.Column="1"
+                            Width="8"
+                            Height="5"
+                            Margin="8,0,10,0"
+                            VerticalAlignment="Center"
+                            Data="M 0 0 L 8 0 4 5 Z"
+                            Fill="{StaticResource Brush.Neutral700}" />
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootBorder" Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame Value="{StaticResource Brush.Primary}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootBorder" Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame Value="{StaticResource Brush.Neutral500}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  ==== HEAVY ITEM TEMPLATE ====  -->
+    <DataTemplate x:Key="UltraItemTemplate">
+        <Grid
+            Margin="8"
+            Background="{StaticResource Grad.Shade}"
+            CornerRadius="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="12" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Path
+                Width="48"
+                Height="48"
+                Data="{StaticResource Geo.L1}"
+                Fill="#22000000"
+                Stretch="Uniform"
+                Stroke="#33000000"
+                StrokeThickness="1" />
+            <Rectangle Grid.Column="1" Width="12" />
+            <StackPanel
+                Grid.Column="2"
+                Margin="0,6,0,6"
+                Spacing="2">
+                <TextBlock
+                    FontSize="16"
+                    FontWeight="SemiBold"
+                    Text="{Binding Title}" />
+                <TextBlock Opacity="0.8" Text="{Binding Subtitle}" />
+                <ProgressBar
+                    Height="3"
+                    IsIndeterminate="True"
+                    Style="{StaticResource UltraProgressBar}" />
+            </StackPanel>
+            <StackPanel Grid.Column="3" VerticalAlignment="Center">
+                <Button
+                    Margin="0,0,0,4"
+                    Content="Action"
+                    Style="{StaticResource UltraButton.Secondary}" />
+                <Button Content="Delete" Style="{StaticResource UltraButton.Danger}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <!--  ==== HEAVY ITEMS CONTROL ====  -->
+    <Style x:Key="UltraItemsControl" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate" Value="{StaticResource UltraItemTemplate}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ItemsControl">
+                    <Border Padding="10" Background="{ThemeResource Brush.App.Background}">
+                        <ItemsPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

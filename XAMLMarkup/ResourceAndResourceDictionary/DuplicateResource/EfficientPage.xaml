@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="Test3.XAMLMarkup.ResourceAndResourceDictionary.DuplicateResource.EfficientPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Test3.XAMLMarkup.ResourceAndResourceDictionary.DuplicateResource"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="MyOrangeBrush" Color="Orange" />
+        </ResourceDictionary>
+    </Page.Resources>
+    <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Orientation="Vertical">
+        <TextBlock
+            FontSize="24"
+            FontWeight="Bold"
+            Foreground="{StaticResource MyOrangeBrush}"
+            Text="TextBlock" />
+        <Button
+            Margin="0,20,0,0"
+            Padding="10,5"
+            Background="{StaticResource MyOrangeBrush}"
+            Content="Button" />
+        <Rectangle
+            Width="100"
+            Height="50"
+            Margin="0,20,0,0"
+            Fill="{StaticResource MyOrangeBrush}" />
+    </StackPanel>
+</Page>

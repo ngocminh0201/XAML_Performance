@@ -100,5 +100,20 @@ namespace Test3
         {
             CreateNewWindow(new XAMLMarkup.ResourceAndResourceDictionary.ResourceNotInUserControl.ResourceNotInUserControlPage());
         }
+
+        private void ResourceScope_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLMarkup.ResourceAndResourceDictionary.ResourceScope.ResourceScopePage());
+        }
+
+        private void InefficientDuplicateResource_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLMarkup.ResourceAndResourceDictionary.DuplicateResource.InefficientPage());
+        }
+
+        private void EfficientDuplicateResource_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLMarkup.ResourceAndResourceDictionary.DuplicateResource.EfficientPage());
+        }
     }
 }
