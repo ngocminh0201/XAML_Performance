@@ -115,5 +115,20 @@ namespace Test3
         {
             CreateNewWindow(new XAMLMarkup.ResourceAndResourceDictionary.DuplicateResource.EfficientPage());
         }
+
+        private void StackPanelStructure_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLLayout.ReduceLayoutStructure.StackPanelPage());
+        }
+
+        private void GridStructure_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLLayout.ReduceLayoutStructure.GridPage());
+        }
+
+        private void RelativePanelStructure_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLLayout.ReduceLayoutStructure.RelativePanelPage());
+        }
     }
 }

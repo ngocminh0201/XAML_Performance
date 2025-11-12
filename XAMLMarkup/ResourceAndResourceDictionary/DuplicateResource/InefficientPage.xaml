@@ -7,19 +7,24 @@
     xmlns:local="using:Test3.XAMLMarkup.ResourceAndResourceDictionary.DuplicateResource"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <SolidColorBrush x:Key="MyOrangeBrush" Color="#FFFFA500" />
+    </Page.Resources>
     <StackPanel
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
         Orientation="Vertical">
         <TextBlock
+            x:Name="TextBlock"
             FontSize="24"
             FontWeight="Bold"
             Text="TextBlock">
             <TextBlock.Foreground>
-                <SolidColorBrush Color="Orange" />
+                <SolidColorBrush Color="#FFFFA500" />
             </TextBlock.Foreground>
         </TextBlock>
         <Button
+            x:Name="Button"
             Margin="0,20,0,0"
             Padding="10,5"
             Content="Button">
@@ -28,6 +33,7 @@
             </Button.Background>
         </Button>
         <Rectangle
+            x:Name="Rectangle"
             Width="100"
             Height="50"
             Margin="0,20,0,0">

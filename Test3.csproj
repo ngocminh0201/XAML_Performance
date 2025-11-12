@@ -19,6 +19,9 @@
     <None Remove="Assets\star.svg" />
     <None Remove="DataVirtualization\HeavyListViewPage.xaml" />
     <None Remove="DataVirtualization\OptimizedListViewPage.xaml" />
+    <None Remove="XAMLLayout\ReduceLayoutStructure\GridPage.xaml" />
+    <None Remove="XAMLLayout\ReduceLayoutStructure\RelativePanelPage.xaml" />
+    <None Remove="XAMLLayout\ReduceLayoutStructure\StackPanelPage.xaml" />
     <None Remove="XAMLMarkup\ReduceVisualTree\CollapsedVisibilityPage.xaml" />
     <None Remove="XAMLMarkup\ReduceVisualTree\UseImageInstead\EfficientPage.xaml" />
     <None Remove="XAMLMarkup\ReduceVisualTree\UseImageInstead\InefficientPage.xaml" />
@@ -57,6 +60,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="XAMLMarkup\OptimizedOverdrawing\" />
     <Folder Include="XAMLMarkup\ReduceVisualTree\DeferItemCreation\" />
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +127,24 @@
 
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="XAMLLayout\ReduceLayoutStructure\RelativePanelPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="XAMLLayout\ReduceLayoutStructure\GridPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="XAMLLayout\ReduceLayoutStructure\StackPanelPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>

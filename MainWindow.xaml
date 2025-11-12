@@ -19,6 +19,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid Margin="10" Background="AliceBlue">
@@ -246,6 +247,46 @@
                         Content="Efficient" />
                 </StackPanel>
             </StackPanel>
+
+            <StackPanel
+                Grid.Row="4"
+                Margin="10"
+                VerticalAlignment="Top"
+                Background="Gray">
+                <TextBlock
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    FontFamily="Segoe UI"
+                    FontSize="40"
+                    Text="Reduce layout structure" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10"
+                        VerticalAlignment="Center"
+                        FontFamily="Segoe UI"
+                        FontSize="30"
+                        Text="Examples:" />
+                    <Button
+                        x:Name="StackPanelStructure"
+                        Width="150"
+                        Height="60"
+                        Click="StackPanelStructure_Click"
+                        Content="StackPanel" />
+                    <Button
+                        x:Name="GridStructure"
+                        Width="150"
+                        Height="60"
+                        Click="GridStructure_Click"
+                        Content="Grid" />
+                    <Button
+                        x:Name="RelativePanelStructure"
+                        Width="150"
+                        Height="60"
+                        Click="RelativePanelStructure_Click"
+                        Content="RelativePanel" />
+                </StackPanel>
+            </StackPanel>
+
             <Frame x:Name="MainFrame" Grid.Row="2" />
         </Grid>
     </ScrollViewer>

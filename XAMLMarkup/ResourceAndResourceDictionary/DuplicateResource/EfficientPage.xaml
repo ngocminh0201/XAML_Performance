@@ -10,7 +10,7 @@
 
     <Page.Resources>
         <ResourceDictionary>
-            <SolidColorBrush x:Key="MyOrangeBrush" Color="Orange" />
+            <SolidColorBrush x:Key="MyOrangeBrush" Color="#FFFFA500" />
         </ResourceDictionary>
     </Page.Resources>
     <StackPanel
@@ -18,16 +18,19 @@
         VerticalAlignment="Center"
         Orientation="Vertical">
         <TextBlock
+            x:Name="TextBlock"
             FontSize="24"
             FontWeight="Bold"
             Foreground="{StaticResource MyOrangeBrush}"
             Text="TextBlock" />
         <Button
+            x:Name="Button"
             Margin="0,20,0,0"
             Padding="10,5"
             Background="{StaticResource MyOrangeBrush}"
             Content="Button" />
         <Rectangle
+            x:Name="Rectangle"
             Width="100"
             Height="50"
             Margin="0,20,0,0"

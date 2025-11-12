@@ -36,7 +36,6 @@ namespace Test3
         /// </summary>
         public App()
         {
-            
             var sw = Stopwatch.StartNew();
             InitializeComponent();
             sw.Stop();

@@ -7,6 +7,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -26,6 +27,10 @@ namespace Test3.XAMLMarkup.ResourceAndResourceDictionary.DuplicateResource
         public InefficientPage()
         {
             InitializeComponent();
+            var res = (SolidColorBrush)Resources["MyOrangeBrush"];
+            Debug.WriteLine($"Res TextBlock vs Button same?  {ReferenceEquals(TextBlock.Foreground, Button.Background)}");
+            Debug.WriteLine($"Res TextBlock vs Rectangle same?  {ReferenceEquals(TextBlock.Foreground, Rectangle.Fill)}");
+            Debug.WriteLine($"Res Rectangle vs res same?  {ReferenceEquals(Rectangle.Fill, res)}");
         }
     }
 }
