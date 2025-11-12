@@ -59,6 +59,7 @@
                     Click="OptimizedListViewButton_Click"
                     Content="Optimized ListView" />
             </StackPanel>
+
             <StackPanel
                 Grid.Row="2"
                 Margin="10"
@@ -169,6 +170,46 @@
                         Height="60"
                         Click="OptimizedResourceDefine_Click"
                         Content="Definition" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10"
+                        VerticalAlignment="Center"
+                        FontFamily="Segoe UI"
+                        FontSize="30"
+                        Text="x:Name:" />
+                    <Button
+                        x:Name="UseXNameResource"
+                        Width="150"
+                        Height="60"
+                        Click="UseXNameResource_Click"
+                        Content="x:Name" />
+                    <Button
+                        x:Name="UseXKeyResource"
+                        Width="150"
+                        Height="60"
+                        Click="UseXKeyResource_Click"
+                        Content="x:Key" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10"
+                        VerticalAlignment="Center"
+                        FontFamily="Segoe UI"
+                        FontSize="30"
+                        Text="ResourceDictionary in UserControl:" />
+                    <Button
+                        x:Name="UserControlResource"
+                        Width="150"
+                        Height="60"
+                        Click="UserControlResource_Click"
+                        Content="Inefficient" />
+                    <Button
+                        x:Name="NotUserControlResource"
+                        Width="150"
+                        Height="60"
+                        Click="NotUserControlResource_Click"
+                        Content="Efficient" />
                 </StackPanel>
             </StackPanel>
             <Frame x:Name="MainFrame" Grid.Row="2" />

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  Brushes  -->
+    <SolidColorBrush x:Key="UCBackgroundBrushApp" Color="#FFF6F8FF" />
+    <SolidColorBrush x:Key="UCBorderBrushApp" Color="#FF3F42CC" />
+    <SolidColorBrush x:Key="UCAccentBrushApp" Color="#FF0078D7" />
+    <!--  Style  -->
+    <Style x:Key="UCButtonStyleApp" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource UCBorderBrushApp}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Padding" Value="6,4" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="4" />
+    </Style>
+
+    <!--  Image  -->
+    <BitmapImage x:Key="UCStarImageApp" UriSource="/Assets/star.svg" />
+</ResourceDictionary>

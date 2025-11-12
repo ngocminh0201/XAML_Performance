@@ -1,4 +1,5 @@
 ﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using System.Collections.Generic;
 using Test3.DataVirtualization;
 using Test3.ReduceVisualTree;
@@ -21,104 +22,83 @@ namespace Test3
             InitializeComponent();
         }
 
-        private void HeavyListViewButton_Click(object sender, RoutedEventArgs e)
+        void CreateNewWindow(Page page)
         {
-            var win = new Window()
+            var win = new Window
             {
-                Content = new HeavyListViewPage()
+                Content = page
             };
             _openWindows.Add(win);
             win.Activate();
+        }
+
+        private void HeavyListViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new HeavyListViewPage());
         }
 
         private void OptimizedListViewButton_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Window
-            {
-                Content = new OptimizedListViewPage()
-            };
-            _openWindows.Add(win);
-            win.Activate();
+            CreateNewWindow(new OptimizedListViewPage());
         }
 
         private void WidthButton_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Window
-            {
-                Content = new WidthPage()
-            };
-            _openWindows.Add(win);
-            win.Activate();
+            CreateNewWindow(new WidthPage());
         }
 
         private void CollapsedVisibility_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Window
-            {
-                Content = new CollapsedVisibilityPage()
-            };
-            _openWindows.Add(win);
-            win.Activate();
+            CreateNewWindow(new CollapsedVisibilityPage());
         }
         private void xLoad_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Window
-            {
-                Content = new xLoadPage()
-            };
-            _openWindows.Add(win);
-            win.Activate();
+            CreateNewWindow(new xLoadPage());
         }
 
         private void InefficientProperty_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Window
-            {
-                Content = new XAMLMarkup.ReduceVisualTree.UsePanelLayoutProperties.InefficientPage()
-            };
-            _openWindows.Add(win);
-            win.Activate();
+            CreateNewWindow(new XAMLMarkup.ReduceVisualTree.UsePanelLayoutProperties.InefficientPage());
         }
 
         private void EfficientProperty_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Window
-            {
-                Content = new XAMLMarkup.ReduceVisualTree.UsePanelLayoutProperties.EfficientPage()
-            };
-            _openWindows.Add(win);
-            win.Activate();
+            CreateNewWindow(new XAMLMarkup.ReduceVisualTree.UsePanelLayoutProperties.EfficientPage());
         }
 
         private void InefficientImage_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Window
-            {
-                Content = new XAMLMarkup.ReduceVisualTree.UseImageInstead.InefficientPage()
-            };
-            _openWindows.Add(win);
-            win.Activate();
+            CreateNewWindow(new XAMLMarkup.ReduceVisualTree.UseImageInstead.InefficientPage());
         }
 
         private void EfficientImage_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Window
-            {
-                Content = new XAMLMarkup.ReduceVisualTree.UseImageInstead.EfficientPage()
-            };
-            _openWindows.Add(win);
-            win.Activate();
-
+            CreateNewWindow(new XAMLMarkup.ReduceVisualTree.UseImageInstead.EfficientPage());
         }
 
         private void OptimizedResourceDefine_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Window
-            {
-                Content = new XAMLMarkup.ResourceAndResourceDictionary.Definition()
-            };
-            _openWindows.Add(win);
-            win.Activate();
+            CreateNewWindow(new XAMLMarkup.ResourceAndResourceDictionary.Definition());
+        }
+
+        private void UseXNameResource_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLMarkup.ResourceAndResourceDictionary.xNamePage());
+        }
+
+        private void UseXKeyResource_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLMarkup.ResourceAndResourceDictionary.xKeyPage());
+        }
+
+        private void UserControlResource_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLMarkup.ResourceInUserControl.ResourceInUserControlPage());
+        }
+
+        private void NotUserControlResource_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLMarkup.ResourceAndResourceDictionary.ResourceNotInUserControl.ResourceNotInUserControlPage());
         }
     }
 }
