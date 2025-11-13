@@ -20,6 +20,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid Margin="10" Background="AliceBlue">
@@ -287,6 +288,38 @@
                 </StackPanel>
             </StackPanel>
 
+            <StackPanel
+                Grid.Row="5"
+                Margin="10"
+                VerticalAlignment="Top"
+                Background="Gray">
+                <TextBlock
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    FontFamily="Segoe UI"
+                    FontSize="40"
+                    Text="LayoutChangedEvent" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10"
+                        VerticalAlignment="Center"
+                        FontFamily="Segoe UI"
+                        FontSize="30"
+                        Text="Examples:" />
+                    <Button
+                        x:Name="SizeChangedEvent"
+                        Width="150"
+                        Height="60"
+                        Click="SizeChangedEvent_Click"
+                        Content="SizeChanged" />
+                    <Button
+                        x:Name="LayoutUpdatedEvent"
+                        Width="150"
+                        Height="60"
+                        Click="LayoutUpdatedEvent_Click"
+                        Content="LayoutUpdated" />
+                </StackPanel>
+            </StackPanel>
             <Frame x:Name="MainFrame" Grid.Row="2" />
         </Grid>
     </ScrollViewer>

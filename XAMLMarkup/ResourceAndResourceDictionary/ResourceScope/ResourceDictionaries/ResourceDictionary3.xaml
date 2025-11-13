@@ -1,508 +1,87 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
-    xmlns:media="using:Microsoft.UI.Xaml.Media">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!--  WinUI 3 SAFE VERSION (no WPF Triggers, no ControlTemplate.Triggers)  -->
-    <!--  Theme dictionaries  -->
-    <ResourceDictionary.ThemeDictionaries>
-        <ResourceDictionary x:Key="Light">
-            <SolidColorBrush x:Key="Brush.App.Background" Color="#FFFFFFFF" />
-            <SolidColorBrush x:Key="Brush.App.Foreground" Color="#FF111827" />
-            <LinearGradientBrush x:Key="Grad.Chrome" StartPoint="0,0" EndPoint="1,0">
-                <GradientStop Offset="0" Color="#FFFFFFFF" />
-                <GradientStop Offset="1" Color="#FFF3F4F6" />
-            </LinearGradientBrush>
-        </ResourceDictionary>
-        <ResourceDictionary x:Key="Dark">
-            <SolidColorBrush x:Key="Brush.App.Background" Color="#FF0B0B0C" />
-            <SolidColorBrush x:Key="Brush.App.Foreground" Color="#FFF3F4F6" />
-            <LinearGradientBrush x:Key="Grad.Chrome" StartPoint="0,0" EndPoint="1,0">
-                <GradientStop Offset="0" Color="#FF1F2937" />
-                <GradientStop Offset="1" Color="#FF111827" />
-            </LinearGradientBrush>
-        </ResourceDictionary>
-    </ResourceDictionary.ThemeDictionaries>
-    <!--  Colors  -->
-    <Color x:Key="Color.Primary">#FF3B82F6</Color>
-    <Color x:Key="Color.PrimaryDark">#FF1E40AF</Color>
-    <Color x:Key="Color.Secondary">#FF10B981</Color>
-    <Color x:Key="Color.Tertiary">#FFF59E0B</Color>
-    <Color x:Key="Color.Danger">#FFEF4444</Color>
-    <Color x:Key="Color.Warning">#FFF59E0B</Color>
-    <Color x:Key="Color.Info">#FF0EA5E9</Color>
-    <Color x:Key="Color.Surface">#FFF3F4F6</Color>
-    <Color x:Key="Color.OnSurface">#FF111827</Color>
+    <!--  ONEUI DOCUMENTATION - COLOR1 REFERENCE  -->
 
-    <!--  Gradients  -->
-    <LinearGradientBrush x:Key="Grad.Primary" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Offset="0" Color="#FF0EA5E9" />
-        <GradientStop Offset="0.2" Color="#FF3B82F6" />
-        <GradientStop Offset="0.4" Color="#FF6366F1" />
-        <GradientStop Offset="0.6" Color="#FF8B5CF6" />
-        <GradientStop Offset="0.8" Color="#FFEC4899" />
-        <GradientStop Offset="1" Color="#FFF59E0B" />
-    </LinearGradientBrush>
-    <RadialGradientBrush x:Key="Grad.NoiseLike" Center="0.5,0.5" RadiusX="0.8" RadiusY="0.8">
-        <GradientStop Offset="0" Color="#11000000" />
-        <GradientStop Offset="0.25" Color="#22000000" />
-        <GradientStop Offset="0.5" Color="#33000000" />
-        <GradientStop Offset="0.75" Color="#44000000" />
-        <GradientStop Offset="1" Color="#55000000" />
-    </RadialGradientBrush>
+    <!--  ## Dark Base ##  -->
+    <!--  Color: White Opacity:20%  -->
+    <Color x:Key="OneUIBaseLowColor">#33FFFFFF</Color>
+    <!--  Color: White Opacity: 40%  -->
+    <Color x:Key="OneUIBaseMediumLowColor">#66FFFFFF</Color>
+    <!--  Color: White Opacity: 60%  -->
+    <Color x:Key="OneUIBaseMediumColor">#99FFFFFF</Color>
+    <!--  Color: White Opacity:80%  -->
+    <Color x:Key="OneUIBaseMediumHighColor">#CCFFFFFF</Color>
+    <!--  Color: White Opacity: 100%  -->
+    <Color x:Key="OneUIBaseHighColor">#FFFFFFFF</Color>
 
-    <!--  Brushes  -->
-    <SolidColorBrush x:Key="Brush.Primary" Color="{StaticResource Color.Primary}" />
-    <SolidColorBrush x:Key="Brush.PrimaryDark" Color="{StaticResource Color.PrimaryDark}" />
-    <SolidColorBrush x:Key="Brush.Secondary" Color="{StaticResource Color.Secondary}" />
-    <SolidColorBrush x:Key="Brush.Tertiary" Color="{StaticResource Color.Tertiary}" />
-    <SolidColorBrush x:Key="Brush.Danger" Color="{StaticResource Color.Danger}" />
-    <SolidColorBrush x:Key="Brush.Warning" Color="{StaticResource Color.Warning}" />
-    <SolidColorBrush x:Key="Brush.Info" Color="{StaticResource Color.Info}" />
-    <SolidColorBrush x:Key="Brush.Surface" Color="{StaticResource Color.Surface}" />
-    <SolidColorBrush x:Key="Brush.OnSurface" Color="{StaticResource Color.OnSurface}" />
+    <!--  ## Dark Alt ##  -->
+    <!--  Color: Black Opacity:20%  -->
+    <Color x:Key="OneUIAltLowColor">#33000000</Color>
+    <!--  Color: Black Opacity:40%  -->
+    <Color x:Key="OneUIAltMediumLowColor">#66000000</Color>
+    <!--  Color: Black Opacity: 60%  -->
+    <Color x:Key="OneUIAltMediumColor">#99000000</Color>
+    <!--  Color: Black Opacity:80%   not yet used  -->
+    <Color x:Key="OneUIAltMediumHighColor">#CC000000</Color>
+    <!--  Color: Black Opacity:100% - The same of Alt Base High  -->
+    <Color x:Key="OneUIAltHighColor">#FF000000</Color>
 
+    <!--  ## Dark Chrome ##  -->
+    <Color x:Key="OneUIChromeWhiteHighColor">#FFFFFF</Color>
+    <Color x:Key="OneUIChromeMediumLowColor">#2D2D30</Color>
+    <Color x:Key="OneUIChromeLowColor">#17171A</Color>
+    <Color x:Key="OneUIChromeDisabledHighColor">#3A3A3D</Color>
+    <Color x:Key="OneUIChromeMediumColor">#252528</Color>
+    <Color x:Key="OneUIChromeHighColor">#636368</Color>
+    <!--  Color: Black Opacity: 20%  -->
+    <Color x:Key="OneUIChromeBlackLowColor">#33000000</Color>
+    <!--  Color: Black Opacity: 40%  -->
+    <Color x:Key="OneUIChromeBlackMediumLowColor">#66000000</Color>
+    <!--  Color: Black Opacity: 40%  -->
+    <Color x:Key="OneUIChromeDisabledLowColor">#66858585</Color>
+    <!--  Color: Black Opacity: 80%  -->
+    <Color x:Key="OneUIChromeBlackMediumColor">#CC000000</Color>
+    <Color x:Key="OneUIChromeAltLowColor">#F2F2F3</Color>
+    <!--  Color:Black Opacity: 100%  -->
+    <Color x:Key="OneUIChromeBlackHighColor">#FF000000</Color>
 
+    <!--  ## Dark List ##  -->
+    <!--  Color: Opacity: 80% refering A-1 AccentColorDark1  -->
+    <Color x:Key="OneUIListAccentHighColor">#CC387AFF</Color>
+    <!--  Color: Opacity: 60% refering A-2 AccentColorDark2  -->
+    <Color x:Key="OneUIListAccentMediumColor">#99387AFF</Color>
+    <!--  Color: Opacity: 40% refering A-3 AccentColorDark3  -->
+    <Color x:Key="OneUIListAccentLowColor">#66387AFF</Color>
+    <!--  Color: Opacity: 10%  -->
+    <Color x:Key="OneUIListLowColor">#1AFFFFFF</Color>
+    <!--  Color: Opacity: 20%  -->
+    <Color x:Key="OneUIListMediumColor">#33FFFFFF</Color>
 
-    <!--  Geometries  -->
-    <Geometry x:Key="Geo.Large1">F1 M 10,10 C 20,0 40,0 50,10 S 80,30 90,20 Q 120,0 150,30 T 210,60 260,40 310,80 360,70 410,100 460,90 510,120 560,110 610,140</Geometry>
-    <Geometry x:Key="Geo.Large2">M 0,0 L 100,0 100,100 0,100 Z M 10,10 L 90,10 90,90 10,90 Z M 20,20 L 80,20 80,80 20,80 Z</Geometry>
-    <Geometry x:Key="Geo.Icon1">M12,2 C6.48,2 2,6.48 2,12 s4.48,10 10,10 10,-4.48 10,-10 S17.52,2 12,2 z M13,7 h-2 v6 h6 v-2 h-4 z</Geometry>
+    <!--  ## Dark Accent ##  -->
+    <!--  Color: Accent refering A  -->
+    <Color x:Key="OneUIListColor">#387AFF</Color>
+    <Color x:Key="OneUIList1Color">#005A9E</Color>
+    <Color x:Key="OneUIListTextColor">#578FFF</Color>
 
-    <!--  Implicit TextBlock style  -->
-    <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="TextWrapping" Value="Wrap" />
-        <Setter Property="Foreground" Value="{ThemeResource Brush.App.Foreground}" />
-        <Setter Property="Margin" Value="0,2,0,2" />
-    </Style>
-
-    <!--  HEAVY BUTTON (WinUI-safe)  -->
-    <Style x:Key="BaseButtonStyle" TargetType="Button">
-        <Setter Property="UseSystemFocusVisuals" Value="True" />
-        <Setter Property="CornerRadius" Value="8" />
-        <Setter Property="Padding" Value="16,10" />
-        <Setter Property="Background" Value="{StaticResource Brush.Primary}" />
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="BorderBrush" Value="{StaticResource Brush.PrimaryDark}" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Grid x:Name="Root">
-                        <!--  Local brush to allow overlay-based visual without mutating shared resources  -->
-                        <Border
-                            x:Name="Container"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}">
-                            <Grid>
-                                <Rectangle x:Name="Overlay" Opacity="0.0">
-                                    <Rectangle.Fill>
-                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                            <GradientStop Offset="0" Color="#22FFFFFF" />
-                                            <GradientStop Offset="1" Color="#11000000" />
-                                        </LinearGradientBrush>
-                                    </Rectangle.Fill>
-                                </Rectangle>
-                                <ContentPresenter
-                                    x:Name="ContentPresenter"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center">
-                                    <ContentPresenter.RenderTransform>
-                                        <ScaleTransform ScaleX="1" ScaleY="1" />
-                                    </ContentPresenter.RenderTransform>
-                                </ContentPresenter>
-                            </Grid>
-                        </Border>
-                        <Border
-                            x:Name="FocusVisual"
-                            BorderBrush="#80FFFFFF"
-                            BorderThickness="2"
-                            CornerRadius="{TemplateBinding CornerRadius}"
-                            IsHitTestVisible="False"
-                            Opacity="0" />
-
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="PointerOver">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="Overlay"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="0.25"
-                                            Duration="0:0:0.15" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Pressed">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="Overlay"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="0.4"
-                                            Duration="0:0:0.1" />
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="ContentPresenter"
-                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-                                            To="0.98"
-                                            Duration="0:0:0.08" />
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="ContentPresenter"
-                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-                                            To="0.98"
-                                            Duration="0:0:0.08" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Container" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame Value="#FF9CA3AF" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Container" Storyboard.TargetProperty="BorderBrush">
-                                            <DiscreteObjectKeyFrame Value="#FF6B7280" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                            <VisualStateGroup x:Name="FocusStates">
-                                <VisualState x:Name="Focused">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="FocusVisual"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="1"
-                                            Duration="0:0:0.1" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Unfocused">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="FocusVisual"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="0"
-                                            Duration="0:0:0.1" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style
-        x:Key="DangerButtonStyle"
-        BasedOn="{StaticResource BaseButtonStyle}"
-        TargetType="Button">
-        <Setter Property="Background" Value="{StaticResource Brush.Danger}" />
-        <Setter Property="BorderBrush" Value="#FF7F1D1D" />
-    </Style>
-    <Style
-        x:Key="SecondaryButtonStyle"
-        BasedOn="{StaticResource BaseButtonStyle}"
-        TargetType="Button">
-        <Setter Property="Background" Value="{StaticResource Brush.Secondary}" />
-        <Setter Property="BorderBrush" Value="#FF065F46" />
-    </Style>
-
-    <!--  ListViewItem (WinUI-safe)  -->
-    <Style x:Key="HeavyListViewItemStyle" TargetType="ListViewItem">
-        <Setter Property="MinHeight" Value="52" />
-        <Setter Property="Padding" Value="12,8" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ListViewItem">
-                    <Grid x:Name="Root">
-                        <Border x:Name="BackgroundPlate" Background="Transparent" />
-                        <Border
-                            x:Name="SelectionPlate"
-                            Background="#223B82F6"
-                            Opacity="0" />
-                        <Grid
-                            x:Name="ContentRoot"
-                            Margin="8,4"
-                            RenderTransformOrigin="0.5,0.5">
-                            <Grid.RenderTransform>
-                                <ScaleTransform ScaleX="1" ScaleY="1" />
-                            </Grid.RenderTransform>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="12" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Path
-                                Width="16"
-                                Height="16"
-                                Data="{StaticResource Geo.Icon1}"
-                                Fill="{StaticResource Brush.Info}" />
-                            <Rectangle
-                                Grid.Column="1"
-                                Width="12"
-                                Fill="Transparent" />
-                            <ContentPresenter Grid.Column="2" />
-                            <Path
-                                Grid.Column="3"
-                                Width="24"
-                                Height="24"
-                                Data="{StaticResource Geo.Large2}"
-                                Stretch="Uniform"
-                                Stroke="#33000000"
-                                StrokeThickness="1" />
-                        </Grid>
-
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="PointerOver">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BackgroundPlate" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame Value="{StaticResource Grad.Primary}" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Pressed">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="ContentRoot"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="0.85"
-                                            Duration="0:0:0.06" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                            <VisualStateGroup x:Name="SelectionStates">
-                                <VisualState x:Name="Unselected" />
-                                <VisualState x:Name="Selected">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="SelectionPlate"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="1"
-                                            Duration="0:0:0.1" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <!--  TextBox (WinUI-safe)  -->
-    <Style x:Key="HeavyTextBoxStyle" TargetType="TextBox">
-        <Setter Property="BorderBrush" Value="#FF9CA3AF" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Padding" Value="12,8" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="TextBox">
-                    <Grid x:Name="Root">
-                        <Border
-                            x:Name="Border"
-                            Background="{ThemeResource Brush.App.Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="6" />
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <TextBlock
-                                x:Name="Placeholder"
-                                Margin="10,6,10,0"
-                                Foreground="#FF9CA3AF"
-                                Text="Enter text" />
-                            <ScrollViewer
-                                x:Name="ContentElement"
-                                Grid.Row="1"
-                                Margin="8,4" />
-                        </Grid>
-
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="PointerOver">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderBrush">
-                                            <DiscreteObjectKeyFrame Value="#FF3B82F6" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderBrush">
-                                            <DiscreteObjectKeyFrame Value="#FF6B7280" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                            <VisualStateGroup x:Name="FocusStates">
-                                <VisualState x:Name="Focused">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="Placeholder"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="0"
-                                            Duration="0:0:0.1" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Unfocused">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="Placeholder"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="1"
-                                            Duration="0:0:0.1" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+    <!--  ## Dark Border ##  -->
+    <!--  Color: Opacity: 5%(0C)  -->
+    <Color x:Key="OneUIBorderEdgeHighlightColor">#0DFFFFFF</Color>
+    <!--  Color: Opacity: 36%(5B)  -->
+    <Color x:Key="OneUIBorderTransientColor">#5C000000</Color>
+    <Color x:Key="OneUIBorderListColor">#387AFF</Color>
 
 
+    <!--  ONEUI DOCUMENTATION - COLOR2 REFERENCE  -->
 
-    <!--  ItemsControl style  -->
-    <Style x:Key="HeavyItemsControlStyle" TargetType="ItemsControl">
-        <Setter Property="ItemsPanel">
-            <Setter.Value>
-                <ItemsPanelTemplate>
-                    <StackPanel />
-                </ItemsPanelTemplate>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="ItemTemplate" Value="{StaticResource HeavyItemTemplate}" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ItemsControl">
-                    <Border Padding="8" Background="{ThemeResource Brush.App.Background}">
-                        <ItemsPresenter />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+    <!--  Component Colors  -->
+    <Color x:Key="OneUIPrimaryColor">#387AFF</Color>
+    <Color x:Key="OneUIPrimaryDarkTextColor">#598FFF</Color>
+    <Color x:Key="OneUICommonColor">#FAFAFF</Color>
+    <Color x:Key="OneUIFunctionalRedColor">#D93E36</Color>
+    <Color x:Key="OneUIFunctionalGreenColor">#11A85D</Color>
+    <Color x:Key="OneUIFunctionalOrangeColor">#E65B17</Color>
+    <Color x:Key="OneUIFunctionalRedTextColor">#FC6C65</Color>
+    <Color x:Key="OneUIFunctionalGreenTextColor">#58DB9C</Color>
+    <Color x:Key="OneUIFunctionalOrangeTextColor">#FC864C</Color>
 
-    <!--  CheckBox (implicit)  -->
-    <Style TargetType="CheckBox">
-        <Setter Property="Padding" Value="8,4" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="CheckBox">
-                    <Grid x:Name="Root" MinHeight="28">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="8" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Border
-                            x:Name="Box"
-                            Width="18"
-                            Height="18"
-                            Background="{ThemeResource Brush.App.Background}"
-                            BorderBrush="#FF6B7280"
-                            BorderThickness="1"
-                            CornerRadius="4" />
-                        <ContentPresenter Grid.Column="2" VerticalAlignment="Center" />
-
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CheckStates">
-                                <VisualState x:Name="Unchecked" />
-                                <VisualState x:Name="Checked">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Box" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame Value="{StaticResource Brush.Primary}" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="PointerOver">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Box" Storyboard.TargetProperty="BorderBrush">
-                                            <DiscreteObjectKeyFrame Value="#FF3B82F6" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Pressed">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="Root"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="0.9"
-                                            Duration="0:0:0.06" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <!--  Spacing resources  -->
-    <x:Double x:Key="Size.2">2</x:Double>
-    <x:Double x:Key="Size.4">4</x:Double>
-    <x:Double x:Key="Size.6">6</x:Double>
-    <x:Double x:Key="Size.8">8</x:Double>
-    <Thickness x:Key="Padding.Small">4,2</Thickness>
-    <Thickness x:Key="Padding.Medium">12,8</Thickness>
-    <Thickness x:Key="Padding.Large">20,16</Thickness>
-    <!--  Item template (heavy visual tree)  -->
-    <DataTemplate x:Key="HeavyItemTemplate">
-        <Grid
-            Margin="8"
-            Background="{StaticResource Grad.NoiseLike}"
-            CornerRadius="8">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="16" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Path
-                Width="48"
-                Height="48"
-                Data="{StaticResource Geo.Large1}"
-                Fill="#22000000"
-                Stretch="Uniform"
-                Stroke="#33000000"
-                StrokeThickness="1" />
-            <Rectangle
-                Grid.Column="1"
-                Width="16"
-                Fill="Transparent" />
-            <StackPanel
-                Grid.Column="2"
-                Margin="0,6,0,6"
-                Spacing="2">
-                <TextBlock
-                    FontSize="16"
-                    FontWeight="Semibold"
-                    Text="{Binding Title}" />
-                <TextBlock Opacity="0.8" Text="{Binding Subtitle}" />
-                <ProgressBar Height="3" IsIndeterminate="True" />
-            </StackPanel>
-            <StackPanel Grid.Column="3" VerticalAlignment="Center">
-                <Button
-                    Margin="0,0,0,4"
-                    Content="Action"
-                    Style="{StaticResource SecondaryButtonStyle}" />
-                <Button Content="Delete" Style="{StaticResource DangerButtonStyle}" />
-            </StackPanel>
-        </Grid>
-    </DataTemplate>
 </ResourceDictionary>
-

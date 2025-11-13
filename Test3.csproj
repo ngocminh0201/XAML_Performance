@@ -13,12 +13,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\alarm.png" />
+    <None Remove="Assets\emergency.mp4" />
     <None Remove="Assets\happy.mp4" />
     <None Remove="Assets\sad.mp4" />
     <None Remove="Assets\sample_large_image.png" />
     <None Remove="Assets\star.svg" />
     <None Remove="DataVirtualization\HeavyListViewPage.xaml" />
     <None Remove="DataVirtualization\OptimizedListViewPage.xaml" />
+    <None Remove="XAMLLayout\EventLayoutChanged\LayoutUpdatedPage.xaml" />
+    <None Remove="XAMLLayout\EventLayoutChanged\SizeChangedPage.xaml" />
     <None Remove="XAMLLayout\ReduceLayoutStructure\GridPage.xaml" />
     <None Remove="XAMLLayout\ReduceLayoutStructure\RelativePanelPage.xaml" />
     <None Remove="XAMLLayout\ReduceLayoutStructure\StackPanelPage.xaml" />
@@ -127,6 +131,18 @@
 
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="XAMLLayout\EventLayoutChanged\LayoutUpdatedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="XAMLLayout\EventLayoutChanged\SizeChangedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>

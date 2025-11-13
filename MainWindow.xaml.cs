@@ -130,5 +130,15 @@ namespace Test3
         {
             CreateNewWindow(new XAMLLayout.ReduceLayoutStructure.RelativePanelPage());
         }
+
+        private void SizeChangedEvent_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLLayout.EventLayoutChanged.SizeChangedPage());
+        }
+
+        private void LayoutUpdatedEvent_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewWindow(new XAMLLayout.EventLayoutChanged.LayoutUpdatedPage());
+        }
     }
 }
