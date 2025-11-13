@@ -32,9 +32,12 @@ namespace Test3.XAMLLayout.EventLayoutChanged
         private const string ExampleXaml =
 @"<Grid x:Name=""RootGrid""
       Background=""LightGray""
-      SizeChanged=""RootGrid_LayoutUpdated"">
+      LayoutUpdated=""RootGrid_LayoutUpdated"">
     <StackPanel HorizontalAlignment=""Center""
                 VerticalAlignment=""Center"">
+        <TextBlock  x:Name=""LayoutUpdatedText""
+                    Margin=""0,0,0,20""
+                    Text=""Sự kiện LayoutUpdated đã được gọi 1 lần""/>
         <Rectangle x:Name=""MyRect""
                    Width=""100""
                    Height=""100""
@@ -138,7 +141,7 @@ namespace Test3.XAMLLayout.EventLayoutChanged
                 return;
             DispatcherQueue.TryEnqueue(() =>
             {
-                LayoutUpdatedText.Text = $"Sự kiện SizeChanged đã được gọi {Counter++} lần.";
+                LayoutUpdatedText.Text = $"Sự kiện LayoutUpdated đã được gọi {Counter++} lần.";
             });
             //MyRect.Fill = new SolidColorBrush((Counter++ % 2 == 0) ? Colors.Black : Colors.White);
         }

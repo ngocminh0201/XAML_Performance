@@ -35,6 +35,9 @@ namespace Test3.XAMLLayout.EventLayoutChanged
       SizeChanged=""RootGrid_SizeChanged"">
     <StackPanel HorizontalAlignment=""Center""
                 VerticalAlignment=""Center"">
+        <TextBlock  x:Name=""SizeChangedText""
+                    Margin=""0,0,0,20""
+                    Text=""Sự kiện SizeChanged đã được gọi 1 lần""/>
         <Rectangle x:Name=""MyRect""
                    Width=""100""
                    Height=""100""
