@@ -65,7 +65,7 @@
                                 Width="120"
                                 Height="120"
                                 Margin="8"
-                                Source="{Binding ImagePath, Converter={StaticResource ImageLoader}, ConverterParameter=120}" />
+                                Source="{Binding ImagePath}" />
 
                             <StackPanel
                                 Grid.Row="0"
