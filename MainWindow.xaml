@@ -72,7 +72,7 @@
                     VerticalAlignment="Center"
                     FontFamily="Segoe UI"
                     FontSize="40"
-                    Text="Giảm số lượng phần tử VisualTree" />
+                    Text="Reduce VisualTree elements" />
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
                         Margin="20"
@@ -158,14 +158,14 @@
                     VerticalAlignment="Center"
                     FontFamily="Segoe UI"
                     FontSize="40"
-                    Text="Tối ưu Resource và ResourceDictionary" />
+                    Text="Optimized Resource and ResourceDictionary" />
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
-                        Margin="10"
+                        Margin="20"
                         VerticalAlignment="Center"
                         FontFamily="Segoe UI"
                         FontSize="30"
-                        Text="Định nghĩa:" />
+                        Text="Definition:" />
                     <Button
                         x:Name="OptimizedResourceDefine"
                         Width="150"
@@ -175,7 +175,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
-                        Margin="10"
+                        Margin="20"
                         VerticalAlignment="Center"
                         FontFamily="Segoe UI"
                         FontSize="30"
@@ -184,6 +184,7 @@
                         x:Name="UseXNameResource"
                         Width="150"
                         Height="60"
+                        Margin="0,0,10,0"
                         Click="UseXNameResource_Click"
                         Content="x:Name" />
                     <Button
@@ -195,7 +196,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
-                        Margin="10"
+                        Margin="20"
                         VerticalAlignment="Center"
                         FontFamily="Segoe UI"
                         FontSize="30"
@@ -204,6 +205,7 @@
                         x:Name="UserControlResource"
                         Width="150"
                         Height="60"
+                        Margin="0,0,10,0"
                         Click="UserControlResource_Click"
                         Content="Inefficient" />
                     <Button
@@ -215,7 +217,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
-                        Margin="10"
+                        Margin="20"
                         VerticalAlignment="Center"
                         FontFamily="Segoe UI"
                         FontSize="30"
@@ -229,7 +231,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
-                        Margin="10"
+                        Margin="20"
                         VerticalAlignment="Center"
                         FontFamily="Segoe UI"
                         FontSize="30"
@@ -238,6 +240,7 @@
                         x:Name="InefficientDuplicateResource"
                         Width="150"
                         Height="60"
+                        Margin="0,0,10,0"
                         Click="InefficientDuplicateResource_Click"
                         Content="Inefficient" />
                     <Button
@@ -262,7 +265,7 @@
                     Text="Reduce layout structure" />
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
-                        Margin="10"
+                        Margin="20"
                         VerticalAlignment="Center"
                         FontFamily="Segoe UI"
                         FontSize="30"
@@ -271,12 +274,14 @@
                         x:Name="StackPanelStructure"
                         Width="150"
                         Height="60"
+                        Margin="0,0,10,0"
                         Click="StackPanelStructure_Click"
                         Content="StackPanel" />
                     <Button
                         x:Name="GridStructure"
                         Width="150"
                         Height="60"
+                        Margin="0,0,10,0"
                         Click="GridStructure_Click"
                         Content="Grid" />
                     <Button
@@ -301,7 +306,7 @@
                     Text="LayoutChangedEvent" />
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
-                        Margin="10"
+                        Margin="20"
                         VerticalAlignment="Center"
                         FontFamily="Segoe UI"
                         FontSize="30"
@@ -310,6 +315,7 @@
                         x:Name="SizeChangedEvent"
                         Width="150"
                         Height="60"
+                        Margin="0,0,10,0"
                         Click="SizeChangedEvent_Click"
                         Content="SizeChanged" />
                     <Button

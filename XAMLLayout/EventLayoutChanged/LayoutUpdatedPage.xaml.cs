@@ -139,11 +139,11 @@ namespace Test3.XAMLLayout.EventLayoutChanged
         {
             if (LayoutUpdatedText == null || RootGrid == null)
                 return;
-            DispatcherQueue.TryEnqueue(() =>
-            {
-                LayoutUpdatedText.Text = $"Sự kiện LayoutUpdated đã được gọi {Counter++} lần.";
-            });
-            //MyRect.Fill = new SolidColorBrush((Counter++ % 2 == 0) ? Colors.Black : Colors.White);
+            //DispatcherQueue.TryEnqueue(() =>
+            //{
+            //    LayoutUpdatedText.Text = $"Sự kiện LayoutUpdated đã được gọi {Counter++} lần.";
+            //});
+            Debug.WriteLine($"Sự kiện LayoutUpdated đã được gọi {Counter++} lần.");
         }
     }
 }
