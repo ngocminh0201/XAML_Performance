@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-  <title>Star Icon</title>
-  <desc>A simple 5-point star for UWP/WinUI SvgImageSource testing</desc>
-  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"
-        fill="#FFC107"/>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="24"
+     height="24"
+     viewBox="0 0 24 24">
+	<path d="M10,1 L12,7 L18,7 L13,10 L15,16 L10,12 L5,16 L7,10 L2,7 L8,7 Z"
+		  fill="gold" />
 </svg>
