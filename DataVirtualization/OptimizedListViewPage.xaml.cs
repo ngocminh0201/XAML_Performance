@@ -52,7 +52,7 @@ namespace Test3.DataVirtualization
     public class IncrementalProductSource : ObservableCollection<Product>
     {
         private const int PageSize = 50;
-        private const int MaxItems = 1000;
+        private const int MaxItems = 100000;
         private int _loaded = 0;
         private bool _busy = false;
         string imagePath = "/Assets/sample_large_image2.png";
