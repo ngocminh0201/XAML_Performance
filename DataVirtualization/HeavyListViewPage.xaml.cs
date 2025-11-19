@@ -14,7 +14,7 @@ namespace Test3.DataVirtualization
         {
             InitializeComponent();
 
-            for (int i = 0; i < 100000; i++)
+            for (int i = 0; i < 2000; i++)
             {
                 Products.Add(new Product
                 {

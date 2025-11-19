@@ -20,14 +20,13 @@
             x:Name="ProductList"
             Margin="0,8,0,0"
             ItemsSource="{x:Bind DataSource, Mode=OneWay}">
-            <!--  BẬT ẢO HÓA + RECYCLING  -->
+            <!--  UI Virtualization  -->
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <ItemsStackPanel />
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
 
-            <!--  Container gọn, chiều cao tối thiểu để giảm đo/arrange  -->
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="MinHeight" Value="44" />
@@ -36,7 +35,6 @@
                 </Style>
             </ListView.ItemContainerStyle>
 
-            <!--  TEMPLATE: giữ NGUYÊN THIẾT KẾ như Heavy page (ảnh trái 120x120, text phải)  -->
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Product">
 
